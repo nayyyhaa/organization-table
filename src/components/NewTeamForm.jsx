@@ -51,6 +51,9 @@ export const NewTeamForm = ({ setIsOpenTeam }) => {
   };
   return (
     <div className="form yellow m-v-1">
+      <p className="align-end" onClick={() => setIsOpenTeam(false)}>
+        <span>X</span>
+      </p>
       <h2 className="centered-text m-v-1">Add New Team Form</h2>
       <FormControl>
         <h4 id="demo-controlled-radio-buttons-group">Choose Department</h4>

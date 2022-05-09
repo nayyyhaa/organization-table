@@ -3,3 +3,26 @@
   width: 100%;
   justify-content: end;
 }
+
+.align-end {
+  display: flex;
+  width: 100%;
+  color: red;
+  font-size: 700;
+  cursor: pointer;
+  justify-content: end;
+}
+
+.align-end > * {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: background 0.1s ease-in;
+}
+
+.align-end > *:hover {
+  background: rgb(248, 212, 212);
+}

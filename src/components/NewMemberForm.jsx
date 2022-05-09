@@ -39,6 +39,9 @@ export const NewMemberForm = ({ setIsOpen }) => {
   };
   return (
     <div className="form blue m-v-1">
+      <p className="align-end" onClick={() => setIsOpen(false)}>
+        <span>X</span>
+      </p>
       <h2 className="centered-text m-v-1">Add New Member Form</h2>
       <FormControl className="m-v-1">
         <h4 id="demo-controlled-radio-buttons-group">Choose Department</h4>
