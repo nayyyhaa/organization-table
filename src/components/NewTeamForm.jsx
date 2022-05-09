@@ -51,11 +51,9 @@ export const NewTeamForm = ({ setIsOpenTeam }) => {
   };
   return (
     <div className="form yellow m-v-1">
-      <h3 className="m-v-1">Add New Team Form</h3>
+      <h2 className="centered-text m-v-1">Add New Team Form</h2>
       <FormControl>
-        <FormLabel id="demo-controlled-radio-buttons-group">
-          Choose Department
-        </FormLabel>
+        <h4 id="demo-controlled-radio-buttons-group">Choose Department</h4>
         <RadioGroup
           aria-labelledby="demo-controlled-radio-buttons-group"
           name="controlled-radio-buttons-group"
@@ -80,53 +78,62 @@ export const NewTeamForm = ({ setIsOpenTeam }) => {
       <Divider />
       {teamForm?.department && (
         <div className="m-v-1">
-          <p>Create Team</p>
+          <h4>Create Team</h4>
           <TextField
             variant="standard"
+            className="m-1"
             label="name"
             onChange={(e) => teamFormHandler("name", e)}
           />
           <TextField
             variant="standard"
+            className="m-1"
             label="email"
             onChange={(e) => teamFormHandler("email", e)}
           />
           <TextField
             variant="standard"
+            className="m-1"
             label="empId"
             onChange={(e) => teamFormHandler("empId", e)}
           />
           <TextField
             variant="standard"
+            className="m-1"
             label="pNumber"
             onChange={(e) => teamFormHandler("pNumber", e)}
           />
           <TextField
             variant="standard"
+            className="m-1"
             label="teamName"
             onChange={(e) => teamFormHandler("teamName", e)}
           />
           <Divider />
           {isTeamValid && (
             <div className="m-v-1">
-              <p>Enter member details: </p>
+              <h4>Enter member details: </h4>
               <TextField
                 variant="standard"
+                className="m-1"
                 label="enter name"
                 onChange={(e) => memberFormHandler("name", e)}
               />
               <TextField
                 variant="standard"
+                className="m-1"
                 label="enter id"
                 onChange={(e) => memberFormHandler("empId", e)}
               />
               <TextField
                 variant="standard"
+                className="m-1"
                 label="enter email"
                 onChange={(e) => memberFormHandler("email", e)}
               />
               <TextField
                 variant="standard"
+                className="m-1"
                 label="enter phone num."
                 onChange={(e) => memberFormHandler("pNumber", e)}
               />

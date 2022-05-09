@@ -39,11 +39,9 @@ export const NewMemberForm = ({ setIsOpen }) => {
   };
   return (
     <div className="form blue m-v-1">
-      <h3 className="m-v-1">Add New Member Form</h3>
+      <h2 className="centered-text m-v-1">Add New Member Form</h2>
       <FormControl className="m-v-1">
-        <FormLabel id="demo-controlled-radio-buttons-group">
-          Choose Department
-        </FormLabel>
+        <h4 id="demo-controlled-radio-buttons-group">Choose Department</h4>
         <RadioGroup
           aria-labelledby="demo-controlled-radio-buttons-group"
           name="controlled-radio-buttons-group"
@@ -72,9 +70,7 @@ export const NewMemberForm = ({ setIsOpen }) => {
       <Divider className="m-1" />
       {memberForm?.department && (
         <FormControl className="m-v-1">
-          <FormLabel id="demo-controlled-radio-buttons-group2">
-            Choose Team
-          </FormLabel>
+          <h4 id="demo-controlled-radio-buttons-group2">Choose Team</h4>
           <RadioGroup
             aria-labelledby="demo-controlled-radio-buttons-group2"
             name="controlled-radio-buttons-group"
@@ -101,24 +97,28 @@ export const NewMemberForm = ({ setIsOpen }) => {
       {memberForm?.team && (
         <>
           <div className="m-v-1">
-            <p>Enter member details: </p>
+            <h4>Enter member details: </h4>
             <TextField
               variant="standard"
+              className="m-1"
               label="enter name"
               onChange={(e) => memberFormHandler("name", e)}
             />
             <TextField
               variant="standard"
+              className="m-1"
               label="enter id"
               onChange={(e) => memberFormHandler("empId", e)}
             />
             <TextField
               variant="standard"
+              className="m-1"
               label="enter email"
               onChange={(e) => memberFormHandler("email", e)}
             />
             <TextField
               variant="standard"
+              className="m-1"
               label="enter p.number"
               onChange={(e) => memberFormHandler("pNumber", e)}
             />
