@@ -1,12 +1,21 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
 import organizationData from "../data/hierarchyData";
 
 const OrganizationContext = createContext();
 
 const OrganizationProvider = ({ children }) => {
-  const [org, setOrg] = useState(organizationData);
+  const [org, setOrg] = useState(() => getDataFromLocal());
 
+  useEffect(() => {
+    localStorage.setItem("organization-data", JSON.stringify(org));
+  }, [org]);
+
+  function getDataFromLocal() {
+    return (
+      JSON.parse(localStorage.getItem("organization-data")) ?? organizationData
+    );
+  }
   const addNewMember = (memberForm) => {
     let newOrg = {
       ...org,
