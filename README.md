@@ -15,14 +15,14 @@ Made custom [Organization Table](https://csb-6glooq.netlify.app/) using ReactJS.
 
 - **Homepage** with all employees listed.
 - Feature in Homepage:
-- - All employees information - Emp Id, Name, Email, Ph. Number, Position, Department listed.
-- - Filter an employee based on Name, Email & Ph. Number
-- - Edit employee's EmpId, Name, Email & Ph. Number.
-- - Delete a Team member.
-- - Add new Team.
-- - Add new Member.
-- - Click on emploee name to see Tree view
-- - Added **local Storage** for data-persistance.
+  - All employees information - Emp Id, Name, Email, Ph. Number, Position, Department listed.
+  - Filter an employee based on Name, Email & Ph. Number
+  - Edit employee's EmpId, Name, Email & Ph. Number.
+  - Delete a Team member.
+  - Add new Team.
+  - Add new Member.
+  - Click on emploee name to see Tree view
+  - Added **local Storage** for data-persistance.
 - **Organization Tree View** - Selected Employee with people working under it will be visible.
 
 ## Technologies & Concepts used
