@@ -15,14 +15,16 @@ export const OrganizationTable = ({ data }) => {
   const filteredData = filterOrgData(data, searchText);
   return (
     <>
-      <TextField
-        id="standard-search"
-        label="Search field"
-        type="search"
-        variant="standard"
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-      />
+      <div className="search-box blue m-v-1">
+        <TextField
+          id="standard-search"
+          label="Search field"
+          type="search"
+          variant="standard"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+      </div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
           <TableHead>
