@@ -33,6 +33,7 @@ export const OrganizationTable = ({ data }) => {
               <TableCell>Emp Id</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
+              <TableCell>Ph. Number</TableCell>
               <TableCell>Department</TableCell>
               <TableCell>Options</TableCell>
             </TableRow>

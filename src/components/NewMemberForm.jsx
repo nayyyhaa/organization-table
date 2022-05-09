@@ -19,7 +19,12 @@ export const NewMemberForm = ({ setIsOpen }) => {
   );
 
   const addMemberHandler = () => {
-    if (memberForm.name && memberForm.email && memberForm.empId) {
+    if (
+      memberForm.name &&
+      memberForm.email &&
+      memberForm.empId &&
+      memberForm.pNumber
+    ) {
       addNewMember(memberForm);
       setMemberForm();
       setIsOpen(false);
@@ -111,6 +116,11 @@ export const NewMemberForm = ({ setIsOpen }) => {
               variant="standard"
               label="enter email"
               onChange={(e) => memberFormHandler("email", e)}
+            />
+            <TextField
+              variant="standard"
+              label="enter p.number"
+              onChange={(e) => memberFormHandler("pNumber", e)}
             />
             <Button
               variant="contained"

@@ -11,7 +11,8 @@ export const OrganizationRow = ({ data }) => {
     id: data.id,
     name: data.name,
     empId: data.empId,
-    email: data.email
+    email: data.email,
+    pNumber: data.pNumber
   });
   const { editMember, deleteMember } = useOrganization();
 
@@ -54,6 +55,13 @@ export const OrganizationRow = ({ data }) => {
                   onChange={(e) => editFormField("email", e)}
                 />
               </TableCell>
+              <TableCell>
+                <input
+                  type="text"
+                  value={empForm.pNumber}
+                  onChange={(e) => editFormField("pNumber", e)}
+                />
+              </TableCell>
             </>
           ) : (
             <>
@@ -62,6 +70,7 @@ export const OrganizationRow = ({ data }) => {
                 <Link to={`/tree/${data.id}`}>{data.name}</Link>
               </TableCell>
               <TableCell>{data.email}</TableCell>
+              <TableCell>{data.pNumber}</TableCell>
             </>
           )}
           <TableCell>{data.department}</TableCell>
@@ -73,15 +82,14 @@ export const OrganizationRow = ({ data }) => {
             >
               {openEdit ? "Save" : "edit"}
             </Button>
-            {data.careerLevel > 2 && (
-              <Button
-                variant="contained"
-                className="m-05"
-                onClick={() => deleteMember(data)}
-              >
-                Delete
-              </Button>
-            )}
+            <Button
+              variant="contained"
+              className="m-05"
+              onClick={() => deleteMember(data)}
+              disabled={data.careerLevel <= 2}
+            >
+              Delete
+            </Button>
           </TableCell>
         </TableRow>
       )}

@@ -4,9 +4,18 @@ export const OrganizationTree = ({ data }) => {
   return (
     <div className="org">
       <div className={`position-card ${colorMap[data?.careerLevel]}`}>
-        <p>{data?.name}</p>
-        <p>id: {data?.empId}</p>
-        <p>{data?.email}</p>
+        <p>
+          <strong>Name: </strong>
+          {data?.name}
+        </p>
+        <p>
+          <strong>empId: </strong>
+          {data?.empId}
+        </p>
+        <p>
+          <strong>Email: </strong>
+          {data?.email}
+        </p>
       </div>
       <div className="level">
         {data?.isHead &&

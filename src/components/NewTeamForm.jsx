@@ -19,9 +19,13 @@ export const NewTeamForm = ({ setIsOpenTeam }) => {
     teamForm?.team?.name &&
     teamForm?.team?.email &&
     teamForm?.team?.empId &&
+    teamForm?.team?.pNumber &&
     teamForm?.team?.teamName;
   const isMemberValid =
-    memberForm?.name && memberForm?.email && memberForm?.empId;
+    memberForm?.name &&
+    memberForm?.email &&
+    memberForm?.empId &&
+    memberForm?.pNumber;
 
   const addTeamHandler = () => {
     if (isTeamValid && isMemberValid) {
@@ -94,6 +98,11 @@ export const NewTeamForm = ({ setIsOpenTeam }) => {
           />
           <TextField
             variant="standard"
+            label="pNumber"
+            onChange={(e) => teamFormHandler("pNumber", e)}
+          />
+          <TextField
+            variant="standard"
             label="teamName"
             onChange={(e) => teamFormHandler("teamName", e)}
           />
@@ -115,6 +124,11 @@ export const NewTeamForm = ({ setIsOpenTeam }) => {
                 variant="standard"
                 label="enter email"
                 onChange={(e) => memberFormHandler("email", e)}
+              />
+              <TextField
+                variant="standard"
+                label="enter phone num."
+                onChange={(e) => memberFormHandler("pNumber", e)}
               />
               <Button
                 variant="contained"
