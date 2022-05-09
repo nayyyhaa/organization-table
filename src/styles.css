@@ -49,15 +49,15 @@
 }
 
 .m-05 {
-  margin: 0.5rem;
+  margin: 0.5rem !important;
 }
 
 .m-v-1 {
-  margin: 1rem 0;
+  margin: 1rem 0 !important;
 }
 
 .m-1 {
-  margin: 1rem;
+  margin: 1rem !important;
 }
 
 .form {
@@ -71,4 +71,14 @@
   text-align: center;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  border: 3px solid rgb(210, 210, 255);
+}
+
+.title {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+a {
+  text-decoration: none;
 }

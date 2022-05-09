@@ -1,4 +1,4 @@
-import "./homepage.css";
+import "./Homepage.css";
 import { Button } from "@mui/material";
 import { useState } from "react";
 import { NewMemberForm } from "components/NewMemberForm";

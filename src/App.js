@@ -5,7 +5,7 @@ import { Homepage, PageNotFound, TreePage } from "./pages";
 export default function App() {
   return (
     <div className="App">
-      <h1>Team Organization</h1>
+      <h1 className="title">Team Organization</h1>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/tree/:id" element={<TreePage />} />

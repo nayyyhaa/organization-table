@@ -1,0 +1,15 @@
+.circle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.label-color {
+  display: flex;
+  width: 50%;
+}
+
+.m-l-1 {
+  margin-left: 1rem;
+}

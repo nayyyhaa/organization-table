@@ -13,9 +13,10 @@ import { useState } from "react";
 export const OrganizationTable = ({ data }) => {
   const [searchText, setSearchText] = useState("");
   const filteredData = filterOrgData(data, searchText);
+
   return (
     <>
-      <div className="search-box blue m-v-1">
+      <div className="search-box m-v-1">
         <TextField
           id="standard-search"
           label="Search field"
@@ -28,7 +29,7 @@ export const OrganizationTable = ({ data }) => {
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
           <TableHead>
-            <TableRow>
+            <TableRow className="blue">
               <TableCell>Emp Id</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
@@ -37,7 +38,7 @@ export const OrganizationTable = ({ data }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            <OrganizationRow data={filteredData} />
+            {filteredData && <OrganizationRow data={filteredData} />}
           </TableBody>
         </Table>
       </TableContainer>
