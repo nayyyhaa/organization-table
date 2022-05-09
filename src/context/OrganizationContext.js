@@ -31,6 +31,7 @@ const OrganizationProvider = ({ children }) => {
                         ...team.children,
                         {
                           id: uuid(),
+                          position: "Team member",
                           name: memberForm.name,
                           empId: memberForm.empId,
                           email: memberForm.email,
@@ -77,6 +78,7 @@ const OrganizationProvider = ({ children }) => {
                     {
                       id: uuid(),
                       name: memberForm.name,
+                      position: "Team member",
                       empId: memberForm.empId,
                       email: memberForm.email,
                       pNumber: memberForm.pNumber,

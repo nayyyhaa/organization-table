@@ -73,6 +73,7 @@ export const OrganizationRow = ({ data }) => {
               <TableCell>{data.pNumber}</TableCell>
             </>
           )}
+          <TableCell>{data.position}</TableCell>
           <TableCell>{data.department}</TableCell>
           <TableCell>
             <Button
@@ -82,14 +83,15 @@ export const OrganizationRow = ({ data }) => {
             >
               {openEdit ? "Save" : "edit"}
             </Button>
-            <Button
-              variant="contained"
-              className="m-05"
-              onClick={() => deleteMember(data)}
-              disabled={data.careerLevel <= 2}
-            >
-              Delete
-            </Button>
+            {data.careerLevel === 4 && (
+              <Button
+                variant="contained"
+                className="m-05"
+                onClick={() => deleteMember(data)}
+              >
+                Delete
+              </Button>
+            )}
           </TableCell>
         </TableRow>
       )}
