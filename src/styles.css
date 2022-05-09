@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+.org::before {
+  content: "";
+  height: 50px;
+  width: 20px;
+  border: 1px solid black;
+}
+
+.level {
+  padding-left: 2rem;
+}
+
+.level::before {
+  content: "";
+  border: 1px solid red;
+  background: pink;
+  width: 20px;
+  height: 100px;
+}
+
+.position-card {
+  border: 1px solid black;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.pink {
+  background: rgb(253, 214, 220);
+}
+.green {
+  background: rgb(207, 250, 207);
+}
+.yellow {
+  background: rgb(252, 252, 210);
+}
+.blue {
+  background: rgb(210, 210, 255);
+}
+
+.m-05 {
+  margin: 0.5rem;
+}
+
+.m-v-1 {
+  margin: 1rem 0;
+}
+
+.form {
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
