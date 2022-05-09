@@ -4,18 +4,20 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import { useState } from "react";
 import { useOrganization } from "../context/OrganizationContext";
+import { formFieldData } from "data/formFieldData";
 
 export const OrganizationRow = ({ data }) => {
   const [openEdit, setOpenEdit] = useState(false);
   const [empForm, setEmpForm] = useState({
     id: data.id,
-    name: data.name,
     empId: data.empId,
+    name: data.name,
     email: data.email,
     pNumber: data.pNumber
   });
   const { editMember, deleteMember } = useOrganization();
-
+  const validateFormField =
+    empForm?.email && empForm?.name && empForm?.empId && empForm?.pNumber;
   const editFormField = (fieldName, e) => {
     setEmpForm((prev) => ({ ...prev, [fieldName]: e.target.value }));
   };
@@ -34,34 +36,19 @@ export const OrganizationRow = ({ data }) => {
         <TableRow>
           {openEdit ? (
             <>
-              <TableCell>
-                <input
-                  type="text"
-                  value={empForm.empId}
-                  onChange={(e) => editFormField("empId", e)}
-                />
-              </TableCell>
-              <TableCell>
-                <input
-                  type="text"
-                  value={empForm.name}
-                  onChange={(e) => editFormField("name", e)}
-                />
-              </TableCell>
-              <TableCell>
-                <input
-                  type="text"
-                  value={empForm.email}
-                  onChange={(e) => editFormField("email", e)}
-                />
-              </TableCell>
-              <TableCell>
-                <input
-                  type="text"
-                  value={empForm.pNumber}
-                  onChange={(e) => editFormField("pNumber", e)}
-                />
-              </TableCell>
+              {formFieldData?.map(
+                ({ id, label, placeHolder }) =>
+                  label !== "teamName" && (
+                    <TableCell key={id}>
+                      <input
+                        type="text"
+                        placeholder={placeHolder}
+                        value={empForm[label]}
+                        onChange={(e) => editFormField(label, e)}
+                      />
+                    </TableCell>
+                  )
+              )}
             </>
           ) : (
             <>
@@ -80,6 +67,7 @@ export const OrganizationRow = ({ data }) => {
               variant="contained"
               className="m-05"
               onClick={editFormHandler}
+              disabled={!validateFormField && openEdit}
             >
               {openEdit ? "Save" : "edit"}
             </Button>

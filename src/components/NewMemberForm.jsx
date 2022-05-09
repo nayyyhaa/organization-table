@@ -5,11 +5,11 @@ import {
   Divider,
   FormControl,
   FormControlLabel,
-  FormLabel,
   TextField,
   Radio,
   RadioGroup
 } from "@mui/material";
+import { formFieldData } from "data/formFieldData";
 
 export const NewMemberForm = ({ setIsOpen }) => {
   const { org, addNewMember } = useOrganization();
@@ -17,18 +17,16 @@ export const NewMemberForm = ({ setIsOpen }) => {
   const teamArr = org?.children?.find(
     ({ department }) => memberForm?.department === department
   );
+  const isMemberValid =
+    memberForm?.name &&
+    memberForm?.email &&
+    memberForm?.empId &&
+    memberForm?.pNumber;
 
   const addMemberHandler = () => {
-    if (
-      memberForm.name &&
-      memberForm.email &&
-      memberForm.empId &&
-      memberForm.pNumber
-    ) {
-      addNewMember(memberForm);
-      setMemberForm();
-      setIsOpen(false);
-    }
+    addNewMember(memberForm);
+    setMemberForm();
+    setIsOpen(false);
   };
 
   const memberFormHandler = (field, e) => {
@@ -101,34 +99,23 @@ export const NewMemberForm = ({ setIsOpen }) => {
         <>
           <div className="m-v-1">
             <h4>Enter member details: </h4>
-            <TextField
-              variant="standard"
-              className="m-1"
-              label="enter name"
-              onChange={(e) => memberFormHandler("name", e)}
-            />
-            <TextField
-              variant="standard"
-              className="m-1"
-              label="enter id"
-              onChange={(e) => memberFormHandler("empId", e)}
-            />
-            <TextField
-              variant="standard"
-              className="m-1"
-              label="enter email"
-              onChange={(e) => memberFormHandler("email", e)}
-            />
-            <TextField
-              variant="standard"
-              className="m-1"
-              label="enter p.number"
-              onChange={(e) => memberFormHandler("pNumber", e)}
-            />
+            {formFieldData?.map(
+              ({ id, label, placeHolder }) =>
+                label !== "teamName" && (
+                  <TextField
+                    key={id}
+                    variant="standard"
+                    className="m-1"
+                    label={placeHolder}
+                    onChange={(e) => memberFormHandler(label, e)}
+                  />
+                )
+            )}
             <Button
               variant="contained"
               className="m-05"
               onClick={addMemberHandler}
+              disabled={!isMemberValid}
             >
               Add Member
             </Button>

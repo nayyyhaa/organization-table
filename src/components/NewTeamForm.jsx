@@ -5,11 +5,11 @@ import {
   Divider,
   FormControl,
   FormControlLabel,
-  FormLabel,
   TextField,
   Radio,
   RadioGroup
 } from "@mui/material";
+import { formFieldData } from "data/formFieldData";
 
 export const NewTeamForm = ({ setIsOpenTeam }) => {
   const { org, addNewTeam } = useOrganization();
@@ -28,12 +28,10 @@ export const NewTeamForm = ({ setIsOpenTeam }) => {
     memberForm?.pNumber;
 
   const addTeamHandler = () => {
-    if (isTeamValid && isMemberValid) {
-      addNewTeam(teamForm, memberForm);
-      setMemberForm();
-      setTeamForm();
-      setIsOpenTeam(false);
-    }
+    addNewTeam(teamForm, memberForm);
+    setMemberForm();
+    setTeamForm();
+    setIsOpenTeam(false);
   };
 
   const teamFormHandler = (field, e) => {
@@ -82,68 +80,36 @@ export const NewTeamForm = ({ setIsOpenTeam }) => {
       {teamForm?.department && (
         <div className="m-v-1">
           <h4>Create Team</h4>
-          <TextField
-            variant="standard"
-            className="m-1"
-            label="name"
-            onChange={(e) => teamFormHandler("name", e)}
-          />
-          <TextField
-            variant="standard"
-            className="m-1"
-            label="email"
-            onChange={(e) => teamFormHandler("email", e)}
-          />
-          <TextField
-            variant="standard"
-            className="m-1"
-            label="empId"
-            onChange={(e) => teamFormHandler("empId", e)}
-          />
-          <TextField
-            variant="standard"
-            className="m-1"
-            label="pNumber"
-            onChange={(e) => teamFormHandler("pNumber", e)}
-          />
-          <TextField
-            variant="standard"
-            className="m-1"
-            label="teamName"
-            onChange={(e) => teamFormHandler("teamName", e)}
-          />
+          {formFieldData?.map(({ id, label, placeHolder }) => (
+            <TextField
+              key={id}
+              variant="standard"
+              className="m-1"
+              label={placeHolder}
+              onChange={(e) => teamFormHandler(label, e)}
+            />
+          ))}
           <Divider />
           {isTeamValid && (
             <div className="m-v-1">
               <h4>Enter member details: </h4>
-              <TextField
-                variant="standard"
-                className="m-1"
-                label="enter name"
-                onChange={(e) => memberFormHandler("name", e)}
-              />
-              <TextField
-                variant="standard"
-                className="m-1"
-                label="enter id"
-                onChange={(e) => memberFormHandler("empId", e)}
-              />
-              <TextField
-                variant="standard"
-                className="m-1"
-                label="enter email"
-                onChange={(e) => memberFormHandler("email", e)}
-              />
-              <TextField
-                variant="standard"
-                className="m-1"
-                label="enter phone num."
-                onChange={(e) => memberFormHandler("pNumber", e)}
-              />
+              {formFieldData?.map(
+                ({ id, label, placeHolder }) =>
+                  label !== "teamName" && (
+                    <TextField
+                      key={id}
+                      variant="standard"
+                      className="m-1"
+                      label={placeHolder}
+                      onChange={(e) => memberFormHandler(label, e)}
+                    />
+                  )
+              )}
               <Button
                 variant="contained"
                 className="m-05"
                 onClick={addTeamHandler}
+                disabled={!(isTeamValid && isMemberValid)}
               >
                 Add Team
               </Button>
