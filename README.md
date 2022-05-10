@@ -21,7 +21,7 @@ Made custom [Organization Table](https://csb-6glooq.netlify.app/) using ReactJS.
   - Delete a Team member.
   - Add new Team.
   - Add new Member.
-  - Click on 'show' btn to see Tree view of people working under selected employee.
+  - Click on 'OPEN' btn to see Tree view of people working under selected employee.
   - Added **local Storage** for data-persistance.
 - **Organization Tree View** - Selected Employee with people working under it will be visible with name, empId & email details.
 
