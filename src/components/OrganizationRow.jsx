@@ -53,9 +53,7 @@ export const OrganizationRow = ({ data }) => {
           ) : (
             <>
               <TableCell>{data.empId}</TableCell>
-              <TableCell>
-                <Link to={`/tree/${data.id}`}>{data.name}</Link>
-              </TableCell>
+              <TableCell>{data.name}</TableCell>
               <TableCell>{data.email}</TableCell>
               <TableCell>{data.pNumber}</TableCell>
             </>
@@ -80,6 +78,14 @@ export const OrganizationRow = ({ data }) => {
                 Delete
               </Button>
             )}
+          </TableCell>
+          <TableCell>
+            {" "}
+            <Link to={`/tree/${data.id}`}>
+              <Button variant="contained" className="m-05">
+                Open
+              </Button>
+            </Link>
           </TableCell>
         </TableRow>
       )}

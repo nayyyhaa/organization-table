@@ -37,6 +37,7 @@ export const OrganizationTable = ({ data }) => {
               <TableCell>Position</TableCell>
               <TableCell>Department</TableCell>
               <TableCell>Options</TableCell>
+              <TableCell>Show Teams</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
