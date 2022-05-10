@@ -21,9 +21,9 @@ Made custom [Organization Table](https://csb-6glooq.netlify.app/) using ReactJS.
   - Delete a Team member.
   - Add new Team.
   - Add new Member.
-  - Click on emploee name to see Tree view
+  - Click on 'show' btn to see Tree view of people working under selected employee.
   - Added **local Storage** for data-persistance.
-- **Organization Tree View** - Selected Employee with people working under it will be visible.
+- **Organization Tree View** - Selected Employee with people working under it will be visible with name, empId & email details.
 
 ## Technologies & Concepts used
 
@@ -42,17 +42,18 @@ Made custom [Organization Table](https://csb-6glooq.netlify.app/) using ReactJS.
 ## Preview ☀️
   
 #### 🔥Homepage🔥
-![image](https://user-images.githubusercontent.com/46138150/167473624-a621b7b6-0d0b-43bc-a108-e00f2767f188.png)
-  
+![Homepage](https://user-images.githubusercontent.com/46138150/167564847-3dec9a6b-f6d5-426a-b727-d07544b57e11.png)
+
 #### 🔥Add New Team🔥
-![Add New Team](https://user-images.githubusercontent.com/46138150/167473943-2fbaa99e-0ac6-4ab1-a46d-668735096a56.png)
+
+![Add New Team](https://user-images.githubusercontent.com/46138150/167565121-17b9aa34-06e9-4408-9332-d25d5004f371.png)
 
 #### 🔥Add New Member🔥
 
-![Add New Member](https://user-images.githubusercontent.com/46138150/167474116-a816e062-0fd1-4a4c-bb72-480e3334ada3.png)
+![Add New Member](https://user-images.githubusercontent.com/46138150/167565265-c0177552-320d-48bf-97af-1c40f0441be5.png)
 
 #### 🔥Organization Tree View🔥
 
-![Organization Tree View](https://user-images.githubusercontent.com/46138150/167474341-2a65bdbe-b907-4354-a96a-b08cd55a0ce7.png)
+![Organization Tree View](https://user-images.githubusercontent.com/46138150/167565360-a969ae93-a70d-44e2-8c8b-13cdabb004b3.png)
 
 </div>
